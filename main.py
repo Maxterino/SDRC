@@ -1,6 +1,9 @@
 from machine import ADC, Pin, PWM
 import time
 
+sd_input_joystick = 1 # Tijdelijke variable voor testing
+DEADZONE = 3000
+
 # initialiseren van de motoren
 left_pwm = PWM(Pin(11), freq=50) # B
 right_pwm = PWM(Pin(17), freq=50) # A
@@ -24,6 +27,13 @@ def draai_links(sd_input_joystick):
     right_dir.value(1)
     left_pwm.duty(sd_input_joystick * 1023)
     right_pwm.duty(0)
+
+#Functie voor deadzone elimineren op de SteamDeck joystick
+def deadzone_eliminator(sd_input_joystick): 
+    if sd_input_joystick <= 3000 and sd_input_joystick >= -3000:
+        return 0
+    else: 
+        return sd_input_joystick
 
 while True:
     vooruit(200)
