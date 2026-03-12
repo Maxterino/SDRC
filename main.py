@@ -19,5 +19,11 @@ def vooruit(snelheid):
     left_pwm.duty(snelheid)
     right_pwm.duty(snelheid)
 
+def draai_links(sd_input_joystick):
+    left_dir.value(0)
+    right_dir.value(1)
+    left_pwm.duty(sd_input_joystick * 1023)
+    right_pwm.duty(0)
+
 while True:
     vooruit(200)
