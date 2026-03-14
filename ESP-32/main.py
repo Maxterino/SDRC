@@ -25,7 +25,7 @@ def draai_links(sd_input_joystick):
     left_pwm.duty(sd_input_joystick * 1023) #Deze conversie moet worden omgezet voor de steamdeck input
     right_pwm.duty(0)
 
-def draai_links(sd_input_joystick):
+def draai_rechts(sd_input_joystick):
     left_dir.value(1)
     right_dir.value(0)
     left_pwm.duty(sd_input_joystick * 1023)
