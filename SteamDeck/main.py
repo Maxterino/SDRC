@@ -1,7 +1,14 @@
 import sys
+import time
+import struct
+import socket
+import pygame
 
+#CONSTANTS
 sd_input_joystick = 1 # Tijdelijke variable voor testing
 DEADZONE = 3000
+ESP32_IP = "192.168.1.2"
+SLEEP_DURATION = 0.01
 
 
 print("Hello World!")
